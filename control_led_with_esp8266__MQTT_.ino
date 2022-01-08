@@ -3,7 +3,7 @@
 
 //i'm using mosquitto as the MQTT BROKER 
 
-#define LED 5 // D1
+int LED = 5 ;// D1
 
 // WiFi
 const char *ssid = "TT_4A58"; // Enter your WiFi name
@@ -12,8 +12,8 @@ const char *password = "ucqefd64y7";  // Enter WiFi password
 // MQTT Broker
 const char *mqtt_broker = "broker.emqx.io";
 const char *topic = "esp8266/led";
-const char *mqtt_username = "";
-const char *mqtt_password = "";
+const char *mqtt_username = "mani";
+const char *mqtt_password = "mani";
 const int mqtt_port = 1883;
 const char *client_id = "esp8266-client" ; 
 
@@ -21,8 +21,9 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 void setup() {
+  pinMode(LED,OUTPUT) ; 
     // Set software serial baud to 115200;
-    Serial.begin(115200);
+    Serial.begin(9600);
     // connecting to a WiFi network
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
