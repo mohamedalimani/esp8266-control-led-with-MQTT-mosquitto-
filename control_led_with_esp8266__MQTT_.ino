@@ -10,7 +10,7 @@ const char *ssid = "TT_4A58"; // Enter your WiFi name
 const char *password = "ucqefd64y7";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "test.mosquitto.org";
+const char *mqtt_broker = "broker.emqx.io";
 const char *topic = "esp8266/led";
 const char *mqtt_username = "";
 const char *mqtt_password = "";
